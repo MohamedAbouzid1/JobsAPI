@@ -44,7 +44,9 @@ app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
-
+app.get('/', (req, res) => {
+  res.send('jobs api');
+});
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
